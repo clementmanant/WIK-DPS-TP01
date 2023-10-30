@@ -22,3 +22,10 @@ You can then check if it's working with ```curl localhost:8000/ping -v```, and s
 For the multi stage image, build it with ```docker build -t tp2_multi -f multi.dockerfile .```, and run it with ```docker run -p 127.0.0.1:8000:8000 tp2_multi```.
 
 You can also check if it works with the same command, ```curl localhost:8000/ping -v```.
+
+
+# WIK_DPS_TP03
+
+Once Docker launched, build up your containers with ```docker compose up --build```. You can now check if your loadbalancer is working correctly by spamming ```curl localhost:8080/ping -v``` in your terminal. The container treating your request should be different each time.
+
+

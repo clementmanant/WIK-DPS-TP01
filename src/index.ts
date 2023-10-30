@@ -1,4 +1,5 @@
 import { createServer, IncomingMessage, ServerResponse } from "http"
+import { hostname } from "os";
 
 const requestListener = function (req: IncomingMessage, res: ServerResponse) {
     try {
@@ -6,6 +7,7 @@ const requestListener = function (req: IncomingMessage, res: ServerResponse) {
         if (req.url === "/ping" && req.method === "GET") {
             res.writeHead(200);
             console.log(req.headers);
+            console.log(hostname());
             res.end(JSON.stringify(req.headers));
         } else {
             res.statusCode = 404;
